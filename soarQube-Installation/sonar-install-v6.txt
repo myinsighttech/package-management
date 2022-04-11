@@ -2,11 +2,11 @@
 # Author: Landmark Technology
 # CentOs or REHEL 7/8
 #  Install JAVA pre-requisite
-hostname sonar
+sudo hostname sonar
 cd /opt
-sudo yum -y install unzip wget git
+sudo yum -y install unzip wget git telnet
 sudo wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
-sudo yum install jdk-8u131-linux-x64.rpm -y
+sudo yum install jdk-8u131-linux-x64.rpm java-11-openjdk-devel -y
 #Download the SonarqQube Server software. 
 sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
 sudo unzip sonarqube-7.8.zip
@@ -24,8 +24,6 @@ sudo useradd sonar
 sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 
 sudo chown -R sonar:sonar /opt/sonarqube/
-sudo chmod -R 775 /opt/sonarqube/
-
 <<mlc
  r  w  x     rw  rx  rwx
  4  2   1     6   5  7
