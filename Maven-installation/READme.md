@@ -37,11 +37,13 @@ sudo mv apache-maven-3.8.3/ maven
 ## .#Step3) Set Environmental Variable  - For Specific User eg ec2-user
 ``` sh
 vi ~/.bash_profile  # and add the lines below
-export M2_HOME=/opt/maven
-export PATH=$PATH:$M2_HOME/bin
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.amzn2.0.1.x86_64  #This can be different for you
+M2_HOME=/opt/maven
+M2=/opt/maven/bin
+PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2:$M2_HOME
 #
 ```
-## .#Step4) Refrsh the profile file and Verify if maven is running
+## .#Step4) Refresh the profile file and Verify if maven is running
 ```sh
 source ~/.bash_profile
 mvn --version
