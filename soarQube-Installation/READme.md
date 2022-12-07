@@ -24,14 +24,14 @@ sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 sudo su - sonar
 ```
 
-### Install Java JDK 1.8+
+### Install Java 11
 
 ``` sh
 hostname sonar
 cd /opt
 sudo yum -y install unzip wget git
-sudo wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
-sudo yum install jdk-8u131-linux-x64.rpm -y
+amazon-linux-extras list
+amazon-linux-extras install java-openjdk11
 ```
 ### Download and extract the SonarqQube Server software.
 ```sh
