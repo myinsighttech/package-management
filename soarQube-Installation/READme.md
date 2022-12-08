@@ -4,7 +4,7 @@
 ### ** Download the latest version of sonarqube at sonarqube.org/downloads/ **
 
 
-## SonarQube Installation And Setup In AWS EC2 Redhat Instnace.
+## SonarQube Installation And Setup In AWS EC2 Amazon linux 2 Instnace.
 ##### Prerequisite
 + AWS Acccount.
 + Create Redhat EC2 T2.small Instnace with 2GB RAM.
@@ -35,10 +35,10 @@ amazon-linux-extras install java-openjdk11
 ```
 ### Download and extract the SonarqQube Server software.
 ```sh
-sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
-sudo unzip sonarqube-7.8.zip
-sudo rm -rf sonarqube-7.8.zip
-sudo mv sonarqube-7.8 sonarqube
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.zip
+sudo unzip sonarqube-8.9.10.zip
+sudo rm -rf sonarqube-8.9.10.zip
+sudo mv sonarqube-8.9.10 sonarqube
 ```
 
 ## Grant permissions for sonar user to start and manage sonarQube
