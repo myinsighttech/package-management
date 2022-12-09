@@ -11,7 +11,7 @@
 + Create Security Group and open Required ports.
    + 9000 ..etc
 + Attach Security Group to EC2 Instance.
-+ Install java openJDK 1.8+ for SonarQube version 7.8
++ Install java 11 for SonarQube version 8.9.10
 
 ## Create sonar user to manage the SonarQube server
 ```sh
