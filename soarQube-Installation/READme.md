@@ -7,7 +7,7 @@
 ## SonarQube Installation And Setup In AWS EC2 Amazon linux 2 Instnace.
 ##### Prerequisite
 + AWS Acccount.
-+ Create Redhat EC2 T2.small Instnace with 2GB RAM.
++ Create Amazon Linux 2 EC2 T2.small Instnace with 2GB RAM.
 + Create Security Group and open Required ports.
    + 9000 ..etc
 + Attach Security Group to EC2 Instance.
