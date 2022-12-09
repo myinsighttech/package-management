@@ -35,7 +35,7 @@ amazon-linux-extras install java-openjdk11
 ```
 ### Download and extract the SonarqQube Server software.
 ```sh
-sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.zip
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip
 sudo unzip sonarqube-8.9.10.zip
 sudo rm -rf sonarqube-8.9.10.zip
 sudo mv sonarqube-8.9.10 sonarqube
