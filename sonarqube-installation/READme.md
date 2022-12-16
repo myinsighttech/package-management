@@ -1,16 +1,17 @@
 #  **<span style="color:green">Insight Tech.</span>**
-### **<span style="color:green">Contacts: +19515021057<br> WebSite : <http://www.insighttech.io/></span>**
+### **<span style="color:green">Contacts: +19515421057<br> WebSite : <http://www.insighttech.io/></span>**
 ### **Email: admin@insighttech.io*
+### ** Download the latest version of sonarqube at sonarqube.org/downloads/ **
 
 
-## SonarQube Installation And Setup In AWS EC2 Redhat Instnace.
+## SonarQube Installation And Setup In AWS EC2 Amazon linux 2 Instnace.
 ##### Prerequisite
 + AWS Acccount.
-+ Create Redhat EC2 T2.medium Instnace with 4GB RAM.
++ Create Amazon Linux 2 EC2 T2.small Instnace with 2GB RAM.
 + Create Security Group and open Required ports.
    + 9000 ..etc
 + Attach Security Group to EC2 Instance.
-+ Install java openJDK 1.8+ for SonarQube version 7.8
++ Install java 11 for SonarQube version 8.9.10
 
 ## Create sonar user to manage the SonarQube server
 ```sh
@@ -23,21 +24,21 @@ sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 sudo su - sonar
 ```
 
-### Install Java JDK 1.8+
+### Install Java 11
 
 ``` sh
 hostname sonar
 cd /opt
 sudo yum -y install unzip wget git
-sudo wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
-sudo yum install jdk-8u131-linux-x64.rpm -y
+amazon-linux-extras list
+amazon-linux-extras install java-openjdk11
 ```
 ### Download and extract the SonarqQube Server software.
 ```sh
-sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
-sudo unzip sonarqube-7.8.zip
-sudo rm -rf sonarqube-7.8.zip
-sudo mv sonarqube-7.8 sonarqube
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip
+sudo unzip sonarqube-8.9.10.zip
+sudo rm -rf sonarqube-8.9.10.zip
+sudo mv sonarqube-8.9.10 sonarqube
 ```
 
 ## Grant permissions for sonar user to start and manage sonarQube

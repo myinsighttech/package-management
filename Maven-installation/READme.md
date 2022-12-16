@@ -1,27 +1,26 @@
 #  **<span style="color:green">Insight Tech.</span>**
-### **<span style="color:green">Contacts: +19515021057<br> WebSite : <http://www.insighttech.io/></span>**
+### **<span style="color:green">Contacts: +1 951-542-1057<br> WebSite : <http://www.insighttech.io/></span>**
 ### **Email: admin@insighttech.io*
 
 
 
-## Apache Maven Installation And Setup In AWS EC2 Redhat Instnace.
+## Apache Maven Installation And Setup In AWS EC2 Amazon Linux 2 Instance.
 ##### Prerequisite
 + AWS Acccount.
-+ Create Redhat EC2 T2.medium Instnace with 4GB of RAM.
-+ Create Security Group and open Required ports.
-   + 22 ..etc
-+ Attach Security Group to EC2 Instance.
-+ Install java openJDK 1.8+
++ Create An Amazon Linux 2 EC2 T2.small Instnace with 2GB of RAM.
++ Create Security Group and open Required ports such port 22.
++ Install java 11
 
-### Install Java JDK 1.8+  and other softares (GIT, wget and tree)
+### Install Java 11  and other softares (GIT, wget and tree)
 
 ``` sh
-# install Java JDK 1.8+ as a pre-requisit for maven to run.
+# install Java 11 as a pre-requisit for maven to run.
 
 sudo hostname maven
 cd /opt
-sudo yum install wget nano tree unzip git-all -y
-sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
+sudo yum -y install unzip wget git -y
+amazon-linux-extras list
+amazon-linux-extras install java-openjdk11 -y
 java -version
 git --version
 ```
@@ -29,21 +28,22 @@ git --version
 ## 2. Download, extract and Install Maven
 ``` sh
 #Step1) Download the Maven Software
-sudo wget https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.zip
-sudo unzip apache-maven-3.8.3-bin.zip
-sudo rm -rf apache-maven-3.8.3-bin.zip
-sudo mv apache-maven-3.8.3/ maven
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
+sudo unzip apache-maven-3.8.6-bin.zip
+sudo rm -rf apache-maven-3.8.6-bin.zip
+sudo mv apache-maven-3.8.6/ maven
 ```
 ## .#Step3) Set Environmental Variable  - For Specific User eg ec2-user
 ``` sh
 vi ~/.bash_profile  # and add the lines below
 export M2_HOME=/opt/maven
 export PATH=$PATH:$M2_HOME/bin
+
 #
 ```
-## .#Step4) Refrsh the profile file and Verify if maven is running
+## .#Step4) Refresh the profile file and Verify if maven is running
 ```sh
-source ~/.bashrc
-mvn -version
+source ~/.bash_profile
+mvn --version
 ```
 
