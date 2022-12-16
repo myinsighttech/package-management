@@ -31,7 +31,7 @@ hostname sonar
 cd /opt
 sudo yum -y install unzip wget git
 amazon-linux-extras list
-amazon-linux-extras install java-openjdk11
+amazon-linux-extras install java-openjdk11 -y
 ```
 ### Download and extract the SonarqQube Server software.
 ```sh
